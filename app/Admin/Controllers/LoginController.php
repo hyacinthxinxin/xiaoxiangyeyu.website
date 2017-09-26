@@ -14,8 +14,6 @@ class LoginController extends Controller
 
     public function login()
     {
-        return redirect('/admin/home');
-
         // 验证
         $this->validate(request(), [
             'name' => 'required|min:2',
