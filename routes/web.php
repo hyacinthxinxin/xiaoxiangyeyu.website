@@ -21,4 +21,5 @@ Route::middleware('auth:web')->group(function () {
     // 个人设置操作
     Route::post('/user/me/setting', '\App\Http\Controllers\UserController@settingStore');
 });
+
 include_once('admin.php');

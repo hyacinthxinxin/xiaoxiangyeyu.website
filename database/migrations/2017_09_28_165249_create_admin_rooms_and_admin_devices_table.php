@@ -11,14 +11,14 @@ class CreateAdminRoomsAndAdminDevicesTable extends Migration
         Schema::create('admin_rooms', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 30)->default('');
-            $table->string('description', 100)->default('');
+            $table->string('description', 100)->index()->default('');
             $table->timestamps();
         });
 
         Schema::create('admin_devices', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 30)->default('');
-            $table->string('description', 100)->default('');
+            $table->string('description', 100)->index()->default('');
             $table->timestamps();
         });
 

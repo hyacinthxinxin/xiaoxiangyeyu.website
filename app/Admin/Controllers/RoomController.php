@@ -29,7 +29,7 @@ class RoomController extends Controller
     {
         $this->validate(request(), [
             'name' => 'required|min:3',
-            'description' => 'required|unique:rooms,description'
+            'description' => 'required|unique:admin_rooms,description'
         ]);
         AdminRoom::create(request(['name', 'description']));
         return redirect('/admin/rooms');

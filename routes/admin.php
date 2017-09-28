@@ -1,22 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: fanxin
- * Date: 2017/9/28
- * Time: 下午3:25
- */
 
 use Illuminate\Support\Facades\Route;
 
 // 管理后台
 Route::prefix('admin')->group(function () {
+
     Route::get('/login', '\App\Admin\Controllers\LoginController@index')->name('admin.login');
-    Route::post('/login', '\App\Admin\Controllers\LoginController@login')->name('admin.do_login');
+    Route::post('/login', '\App\Admin\Controllers\LoginController@login');
     Route::middleware(['auth:admin'])->group(function () {
-        Route::get('/logout', '\App\Admin\Controllers\LoginController@logout');
-        Route::get('/home', '\App\Admin\Controllers\HomeController@index');
+        Route::get('/logout', '\App\Admin\Controllers\LoginController@logout')->name('admin.logout');
+        Route::get('/home', '\App\Admin\Controllers\HomeController@index')->name('admin.home');
         Route::middleware(['can:system'])->group(function () {
-            // 管理人员模块
             Route::get('/users', '\App\Admin\Controllers\UserController@index');
             Route::get('/users/create', '\App\Admin\Controllers\UserController@create');
             Route::post('/users/store', '\App\Admin\Controllers\UserController@store');
@@ -27,10 +21,28 @@ Route::prefix('admin')->group(function () {
             Route::post('/roles/store', '\App\Admin\Controllers\RoleController@store');
             Route::get('/roles/{role}/permission', '\App\Admin\Controllers\RoleController@permission');
             Route::post('/roles/{role}/permission', '\App\Admin\Controllers\RoleController@storePermission');
-
             Route::get('/permissions', '\App\Admin\Controllers\PermissionController@index');
             Route::get('/permissions/create', '\App\Admin\Controllers\PermissionController@create');
             Route::post('/permissions/store', '\App\Admin\Controllers\PermissionController@store');
         });
+
+        Route::middleware(['can:room'])->group(function () {
+            Route::get('/rooms', '\App\Admin\Controllers\RoomController@index');
+            Route::get('/rooms/create', '\App\Admin\Controllers\RoomController@create');
+            Route::post('/rooms', '\App\Admin\Controllers\RoomController@store');
+        });
+
+        Route::middleware(['can:device'])->group(function () {
+            Route::get('/devices', '\App\Admin\Controllers\DeviceController@index');
+            Route::get('/devices/create', '\App\Admin\Controllers\DeviceController@create');
+            Route::post('/devices', '\App\Admin\Controllers\DeviceController@store');
+        });
+
+        Route::middleware(['can:command'])->group(function () {
+            Route::get('/commands', '\App\Admin\Controllers\CommandController@index');
+            Route::get('/commands/create', '\App\Admin\Controllers\CommandController@create');
+            Route::post('/commands', '\App\Admin\Controllers\CommandController@store');
+        });
+
     });
 });

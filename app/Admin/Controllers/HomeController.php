@@ -7,9 +7,6 @@ use Illuminate\Support\Facades\Redirect;
 class HomeController extends Controller
 {
     public function index() {
-        $user = Auth::user();
-        dump($user);
-
         return view('admin.home.index');
     }
 }

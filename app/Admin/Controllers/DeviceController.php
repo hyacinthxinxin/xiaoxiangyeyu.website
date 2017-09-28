@@ -29,10 +29,10 @@ class DeviceController extends Controller
     {
         $this->validate(request(), [
             'name' => 'required|min:3',
-            'description' => 'required|unique:devices,description'
+            'description' => 'required|unique:admin_devices,description'
         ]);
         AdminDevice::create(request(['name', 'description']));
-        return redirect('/admin/devices')->withErrors();
+        return redirect('/admin/devices');
     }
 
 }
