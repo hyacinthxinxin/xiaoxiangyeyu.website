@@ -4,7 +4,7 @@
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
-            {{--@can('system')--}}
+            @can('system')
                 <li class="treeview active">
                     <a href="#">
                         <i class="fa fa-dashboard"></i> <span>系统管理</span>
@@ -16,28 +16,28 @@
                         <li><a href="/admin/roles"><i class="fa fa-circle-o"></i> 角色管理</a></li>
                     </ul>
                 </li>
-            {{--@endcan--}}
-{{--            @can('room')--}}
+            @endcan
+            @can('room')
                 <li class="active treeview">
                     <a href="/admin/rooms">
                         <i class="fa fa-dashboard"></i> <span>房间管理</span>
                     </a>
                 </li>
-            {{--@endcan--}}
-{{--            @can('device')--}}
+            @endcan
+            @can('device')
                 <li class="active treeview">
                     <a href="/admin/devices">
                         <i class="fa fa-dashboard"></i> <span>设备管理</span>
                     </a>
                 </li>
-            {{--@endcan--}}
-{{--            @can('command')--}}
+            @endcan
+            @can('command')
                 <li class="active treeview">
                     <a href="/admin/commands">
                         <i class="fa fa-dashboard"></i> <span>指令管理</span>
                     </a>
                 </li>
-            {{--@endcan--}}
+            @endcan
         </ul>
     </section>
     <!-- /.sidebar -->

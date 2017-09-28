@@ -2,33 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 
-// 管理后台
-Route::prefix('admin')->group(function () {
-    Route::get('/login', '\App\Admin\Controllers\LoginController@index')->name('admin.login');
-    Route::post('/login', '\App\Admin\Controllers\LoginController@login')->name('admin.do_login');
-    Route::middleware(['auth:admin'])->group(function (){
-        Route::get('/logout', '\App\Admin\Controllers\LoginController@logout');
-        Route::get('/home', '\App\Admin\Controllers\HomeController@index');
-//        Route::middleware(['can:system'])->group(function () {
-            // 管理人员模块
-            Route::get('/users', '\App\Admin\Controllers\UserController@index');
-            Route::get('/users/create', '\App\Admin\Controllers\UserController@create');
-            Route::post('/users/store', '\App\Admin\Controllers\UserController@store');
-            Route::get('/users/{user}/role', '\App\Admin\Controllers\UserController@role');
-            Route::post('/users/{user}/role', '\App\Admin\Controllers\UserController@storeRole');
-            Route::get('/roles', '\App\Admin\Controllers\RoleController@index');
-            Route::get('/roles/create', '\App\Admin\Controllers\RoleController@create');
-            Route::post('/roles/store', '\App\Admin\Controllers\RoleController@store');
-            Route::get('/roles/{role}/permission', '\App\Admin\Controllers\RoleController@permission');
-            Route::post('/roles/{role}/permission', '\App\Admin\Controllers\RoleController@storePermission');
 
-            Route::get('/permissions', '\App\Admin\Controllers\PermissionController@index');
-            Route::get('/permissions/create', '\App\Admin\Controllers\PermissionController@create');
-            Route::post('/permissions/store', '\App\Admin\Controllers\PermissionController@store');
-//        });
+Route::get('/', '\App\Http\Controllers\HomeController@index');
+// 用户模块
+// 注册页面
+Route::get('/register', '\App\Http\Controllers\RegisterController@index')->name('register');
+// 注册行为
+Route::post('/register', '\App\Http\Controllers\RegisterController@register');
+// 登录页面
+Route::get('/login', '\App\Http\Controllers\LoginController@index')->name('login');
+// 登录行为
+Route::post('/login', '\App\Http\Controllers\LoginController@login');
 
-    });
-
+Route::middleware('auth:web')->group(function () {
+    Route::get('/logout', '\App\Http\Controllers\LoginController@logout');
+    // 个人设置页面
+    Route::get('/user/me/setting', '\App\Http\Controllers\UserController@setting');
+    // 个人设置操作
+    Route::post('/user/me/setting', '\App\Http\Controllers\UserController@settingStore');
 });
-
-Route::get('/', 'HomeController@index')->name('home');
+include_once('admin.php');

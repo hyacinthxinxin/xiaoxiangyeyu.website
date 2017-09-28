@@ -17,7 +17,7 @@ class LoginController extends Controller
         // 验证
         $this->validate(request(), [
             'name' => 'required|min:2',
-            'password' => 'required|min:5|max:10',
+            'password' => 'required|min:4|max:10',
         ]);
 
         $user = request(['name', 'password']);

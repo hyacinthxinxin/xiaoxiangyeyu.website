@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>laravel for blog</title>
+    <title>潇湘夜雨</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
 <div class="container">
     <div class="row">
         @yield('content')
-        @include("layout.sidebar")
+        {{--@include("layout.sidebar")--}}
     </div>
 </div>
 @include("layout.footer")
