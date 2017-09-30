@@ -22,7 +22,6 @@ class CommandController extends Controller
     public function create()
     {
         return view('admin.command.create');
-
     }
 
     public function store()
@@ -30,10 +29,11 @@ class CommandController extends Controller
         $this->validate(request(), [
             'name' => 'required|min:3',
             'description' => 'required|unique:admin_commands,description',
+            'address' => 'required',
             'type' => 'required|integer',
             'value' => 'required|integer',
         ]);
-        AdminCommand::create(request(['name', 'description', 'type', 'value']));
+        AdminCommand::create(request(['name', 'address', 'description', 'type', 'value']));
         return redirect('/admin/commands');
     }
 
