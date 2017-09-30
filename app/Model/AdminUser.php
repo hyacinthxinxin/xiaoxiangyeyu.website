@@ -36,4 +36,8 @@ class AdminUser extends Authenticatable
     {
         return $this->isInRoles($permission->roles);
     }
+
+    public function dingdongs() {
+        return $this->hasMany(AdminDingdong::class, 'admin_user_id', 'id');
+    }
 }

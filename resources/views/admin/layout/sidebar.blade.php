@@ -38,6 +38,13 @@
                     </a>
                 </li>
             @endcan
+            @can('dingdong')
+                <li class="active treeview">
+                    <a href="/admin/dingdongs">
+                        <i class="fa fa-dashboard"></i> <span>叮咚配置管理</span>
+                    </a>
+                </li>
+            @endcan
         </ul>
     </section>
     <!-- /.sidebar -->

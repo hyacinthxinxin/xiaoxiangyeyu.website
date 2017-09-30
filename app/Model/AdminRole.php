@@ -20,7 +20,10 @@ class AdminRole extends Model
         return $this->permissions()->detach($permission);
     }
 
-    public function hasPermission($permission){
-        return $this->permissions->contains($permission);
+    public function hasPermission($permission)
+    {
+        if (!empty($this->permissions)) {
+            return $this->permissions->contains($permission);
+        }
     }
 }

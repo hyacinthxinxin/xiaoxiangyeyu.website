@@ -5,34 +5,36 @@
         <div class="row">
             <div class="col-lg-10 col-xs-6">
                 <div class="box">
+
                     <div class="box-header with-border">
-                        <h3 class="box-title">房间列表</h3>
+                        <h3 class="box-title">项目列表</h3>
                     </div>
-                    <a type="button" class="btn " href="/admin/rooms/create">增加房间</a>
+                    <a type="button" class="btn " href="/admin/dingdongs/create">增加项目</a>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <table class="table table-bordered">
                             <tbody>
                             <tr>
                                 <th style="width: 10px">#</th>
-                                <th>房间名称</th>
-                                <th>房间描述</th>
+                                <th>项目名称</th>
+                                <th>音箱序号</th>
+                                <th>项目地址</th>
                                 <th>操作</th>
                             </tr>
-                            @foreach($rooms as $room)
+                            @foreach($dingdongs as $dingdong)
                                 <tr>
-                                    <td>{{$room->id}}.</td>
-                                    <td>{{$room->name}}</td>
-                                    <td>{{$room->description}}</td>
-                                    {{--<td>--}}
-                                        {{--<a type="button" class="btn"--}}
-                                           {{--href="/admin/roles/{{$role->id}}/permission">权限管理</a>--}}
-                                    {{--</td>--}}
+                                    <td>{{$dingdong->id}}.</td>
+                                    <td>{{$dingdong->name}}</td>
+                                    <td>{{$dingdong->dingdong_user_id}}</td>
+                                    <td>{{$dingdong->address}}</td>
+                                    <td>
+                                    <a type="button" class="btn" href="/admin/dingdongs/{{$dingdong->id}}">查看</a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
-                        {{ $rooms->links() }}
+                        {{ $dingdongs->links() }}
                     </div>
                 </div>
             </div>

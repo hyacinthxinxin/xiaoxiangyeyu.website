@@ -44,5 +44,14 @@ Route::prefix('admin')->group(function () {
             Route::post('/commands', '\App\Admin\Controllers\CommandController@store');
         });
 
+        Route::middleware(['can:dingdong'])->group(function () {
+            Route::get('/dingdongs', '\App\Admin\Controllers\DingdongController@index');
+            Route::get('/dingdongs/create', '\App\Admin\Controllers\DingdongController@create');
+            Route::post('/dingdongs', '\App\Admin\Controllers\DingdongController@store');
+            Route::get('/dingdongs/{dingdong}', '\App\Admin\Controllers\DingdongController@show');
+            Route::get('/dingdongs/{dingdong}/rooms', '\App\Admin\Controllers\DingdongController@rooms');
+
+        });
+
     });
 });
