@@ -3,8 +3,6 @@
 namespace App\Admin\Controllers;
 
 use App\Model\AdminPermission;
-use App\Model\AdminRole;
-use Illuminate\Support\Facades\Redirect;
 
 class PermissionController extends Controller
 {

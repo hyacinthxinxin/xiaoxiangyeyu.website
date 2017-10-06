@@ -57,11 +57,11 @@ class UserController extends Controller
         $roles = AdminRole::findMany(request('roles'));
         $myRoles = $user->roles;
         $addRoles = $roles->diff($myRoles);
-        foreach ($addRoles as $role){
+        foreach ($addRoles as $role) {
             $user->assignRole($role);
         }
         $deleteRoles = $myRoles->diff($roles);
-        foreach ($deleteRoles as $role){
+        foreach ($deleteRoles as $role) {
             $user->deleteRole($role);
         }
         return Redirect::back();
