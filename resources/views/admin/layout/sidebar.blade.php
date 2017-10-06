@@ -1,8 +1,5 @@
 <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-        <!-- /.search form -->
-        <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             @can('system')
                 <li class="treeview active">
@@ -47,5 +44,4 @@
             @endcan
         </ul>
     </section>
-    <!-- /.sidebar -->
 </aside>

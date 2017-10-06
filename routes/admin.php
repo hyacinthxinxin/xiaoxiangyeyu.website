@@ -50,7 +50,8 @@ Route::prefix('admin')->group(function () {
             Route::post('/dingdongs', '\App\Admin\Controllers\DingdongController@store');
             Route::get('/dingdongs/{dingdong}', '\App\Admin\Controllers\DingdongController@show');
             Route::get('/dingdongs/{dingdong}/rooms', '\App\Admin\Controllers\DingdongController@rooms');
-
+            Route::get('/dingdongs/{dingdong}/rooms/create', '\App\Admin\Controllers\DingdongController@room_create');
+            Route::post('/dingdongs/{dingdong}/rooms', '\App\Admin\Controllers\DingdongController@room_store');
         });
 
     });

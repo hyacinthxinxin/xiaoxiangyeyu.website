@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 $api = app('Dingo\Api\Routing\Router');
 // 配置api版本和路由
 $api->version('v1', ['namespace' => 'App\Api\V1\Controllers'], function ($api) {
-    // 测试
-    $api->group(['prefix' => 'test'], function ($api) {
-        $api->get('/', 'TestController@index')->name('api.test');
+    $api->group(['prefix' => 'dingdong'], function ($api) {
+        $api->get('/', 'DingdongController@index')->name('api.dingdong');
+        $api->post('/receive', 'DingdongController@receive')->name('api.receive');
     });
     // 授权组
 //    $api->group(['prefix' => 'auth'], function ($api) {
