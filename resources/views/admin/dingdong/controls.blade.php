@@ -1,39 +1,42 @@
 @extends('admin.layout.main')
 @section('content')
     <section class="content">
-        <!-- Small boxes (Stat box) -->
         <div class="row">
             <div class="col-lg-10 col-xs-6">
                 <div class="box">
-
                     <div class="box-header with-border">
-                        <h3 class="box-title">指令列表</h3>
+                        <h3 class="box-title">设备列表</h3>
                     </div>
-                    <a type="button" class="btn " href="/admin/commands/create">增加指令</a>
-                    <!-- /.box-header -->
                     <div class="box-body">
                         <table class="table table-bordered">
                             <tbody>
                             <tr>
                                 <th style="width: 10px">#</th>
+                                <th>房间名称</th>
+                                <th>设备名称</th>
                                 <th>指令名称</th>
                                 <th>指令类型</th>
+                                <th>指令地址</th>
+                                <th>指令值</th>
                                 <th>操作</th>
                             </tr>
-                            @foreach($commands as $command)
+                            @foreach($controls as $control)
                                 <tr>
-                                    <td>{{$command->id}}.</td>
-                                    <td>{{$command->name}}</td>
-                                    <td>{{$command->type}}</td>
+                                    <td>{{$control->id}}.</td>
+                                    <td>{{$control->room_name}}</td>
+                                    <td>{{$control->device_name}}</td>
+                                    <td>{{$control->command_name}}</td>
+                                    <td>{{$control->command_type}}</td>
+                                    <td>{{$control->command_address}}</td>
+                                    <td>{{$control->command_value}}</td>
                                     <td>
-                                    {{--<a type="button" class="btn"--}}
-                                    {{--href="/admin/roles/{{$role->id}}/permission">权限管理</a>--}}
+                                        {{--<a type="button" class="btn" href="/admin/dingdongs/{{$dingdong->id}}">查看</a>--}}
                                     </td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
-                        {{ $commands->links() }}
+                        {{ $controls->links() }}
                     </div>
                 </div>
             </div>

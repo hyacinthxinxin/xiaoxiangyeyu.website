@@ -24,6 +24,9 @@ Route::prefix('admin')->group(function () {
             Route::get('/permissions', '\App\Admin\Controllers\PermissionController@index');
             Route::get('/permissions/create', '\App\Admin\Controllers\PermissionController@create');
             Route::post('/permissions/store', '\App\Admin\Controllers\PermissionController@store');
+            Route::get('/dingdongs', '\App\Admin\Controllers\DingdongController@index');
+            Route::get('/dingdongs/create', '\App\Admin\Controllers\DingdongController@create');
+            Route::post('/dingdongs', '\App\Admin\Controllers\DingdongController@store');
         });
 
         Route::middleware(['can:room'])->group(function () {
@@ -45,13 +48,10 @@ Route::prefix('admin')->group(function () {
         });
 
         Route::middleware(['can:dingdong'])->group(function () {
-            Route::get('/dingdongs', '\App\Admin\Controllers\DingdongController@index');
-            Route::get('/dingdongs/create', '\App\Admin\Controllers\DingdongController@create');
-            Route::post('/dingdongs', '\App\Admin\Controllers\DingdongController@store');
             Route::get('/dingdongs/{dingdong}', '\App\Admin\Controllers\DingdongController@show');
-            Route::get('/dingdongs/{dingdong}/rooms', '\App\Admin\Controllers\DingdongController@rooms');
-            Route::get('/dingdongs/{dingdong}/rooms/create', '\App\Admin\Controllers\DingdongController@room_create');
-            Route::post('/dingdongs/{dingdong}/rooms', '\App\Admin\Controllers\DingdongController@room_store');
+            Route::get('/dingdongs/{dingdong}/controls', '\App\Admin\Controllers\DingdongController@controls');
+            Route::get('/dingdongs/{dingdong}/controls/create', '\App\Admin\Controllers\DingdongController@control_create');
+            Route::post('/dingdongs/{dingdong}/controls', '\App\Admin\Controllers\DingdongController@control_store');
         });
 
     });

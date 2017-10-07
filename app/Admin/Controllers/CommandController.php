@@ -27,13 +27,10 @@ class CommandController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'name' => 'required|min:3',
-            'description' => 'required|unique:admin_commands,description',
-            'address' => 'required',
+            'name' => 'required|min:2|unique:admin_commands,name',
             'type' => 'required|integer',
-            'value' => 'required|integer',
         ]);
-        AdminCommand::create(request(['name', 'address', 'description', 'type', 'value']));
+        AdminCommand::create(request(['name', 'type']));
         return redirect('/admin/commands');
     }
 

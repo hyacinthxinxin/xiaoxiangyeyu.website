@@ -15,6 +15,16 @@
                             {{ csrf_field() }}
                             <div class="box-body">
                                 <div class="form-group">
+                                    <label for="exampleInputEmail1">用户</label>
+                                    <select name="admin_user_id" class="form-control">
+                                        @foreach($users as $user)
+                                            <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group">
                                     <label for="exampleInputEmail1">项目名称</label>
                                     <input type="text" class="form-control" name="name">
                                 </div>
@@ -31,6 +41,7 @@
                                     <input type="text" class="form-control" name="address">
                                 </div>
                             </div>
+                            @include('layout.error')
                             <div class="box-footer">
                                 <button type="submit" class="btn btn-primary">提交</button>
                             </div>

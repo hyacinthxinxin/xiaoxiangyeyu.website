@@ -11,6 +11,7 @@
                         <li><a href="/admin/permissions"><i class="fa fa-circle-o"></i> 权限管理</a></li>
                         <li><a href="/admin/users"><i class="fa fa-circle-o"></i> 用户管理</a></li>
                         <li><a href="/admin/roles"><i class="fa fa-circle-o"></i> 角色管理</a></li>
+                        <li><a href="/admin/dingdongs"><i class="fa fa-circle-o"></i> 项目管理</a></li>
                     </ul>
                 </li>
             @endcan
@@ -36,10 +37,18 @@
                 </li>
             @endcan
             @can('dingdong')
-                <li class="active treeview">
-                    <a href="/admin/dingdongs">
-                        <i class="fa fa-dashboard"></i> <span>叮咚配置管理</span>
+                <li class="treeview active">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>项目管理</span>
+                        <span class="pull-right-container"></span>
                     </a>
+                    <ul class="treeview-menu">
+                        @if(\Illuminate\Support\Facades\Auth::user()->hasDingdong())
+                            <li><a href="/admin/dingdongs/{{\Illuminate\Support\Facades\Auth::user()->dingdong->id}}"><i class="fa fa-circle-o"></i> 项目配置</a></li>
+                            <li><a href="/admin/dingdongs/{{\Illuminate\Support\Facades\Auth::user()->dingdong->id}}/controls"><i class="fa fa-circle-o"></i> 设备管理</a></li>
+                            <li><a href="/admin/dingdongs/{{\Illuminate\Support\Facades\Auth::user()->dingdong->id}}/controls/create"><i class="fa fa-circle-o"></i> 添加设备</a></li>
+                        @endif
+                    </ul>
                 </li>
             @endcan
         </ul>

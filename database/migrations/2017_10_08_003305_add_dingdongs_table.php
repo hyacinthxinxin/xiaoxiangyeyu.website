@@ -4,11 +4,11 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddAdminDingdongsTable extends Migration
+class AddDingdongsTable extends Migration
 {
     public function up()
     {
-        Schema::create('admin_dingdongs', function (Blueprint $table) {
+        Schema::create('dingdongs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('admin_user_id')->default(0);
             $table->string('dingdong_user_id')->default('')->index()->unique();
@@ -23,6 +23,6 @@ class AddAdminDingdongsTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('admin_dingdongs');
+        Schema::dropIfExists('dingdongs');
     }
 }

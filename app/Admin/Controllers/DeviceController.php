@@ -28,10 +28,9 @@ class DeviceController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'name' => 'required|min:3',
-            'description' => 'required|unique:admin_devices,description'
+            'name' => 'required|min:2',
         ]);
-        AdminDevice::create(request(['name', 'description']));
+        AdminDevice::create(request(['name']));
         return redirect('/admin/devices');
     }
 

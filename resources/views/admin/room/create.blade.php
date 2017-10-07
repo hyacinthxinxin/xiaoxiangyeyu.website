@@ -16,12 +16,7 @@
                                     <input type="text" class="form-control" name="name">
                                 </div>
                             </div>
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">描述</label>
-                                    <input type="text" class="form-control" name="description">
-                                </div>
-                            </div>
+                            @include('layout.error')
                             <div class="box-footer">
                                 <button type="submit" class="btn btn-primary">提交</button>
                             </div>

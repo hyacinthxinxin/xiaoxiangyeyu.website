@@ -17,18 +17,16 @@
                             <tr>
                                 <th style="width: 10px">#</th>
                                 <th>设备名称</th>
-                                <th>设备描述</th>
                                 <th>操作</th>
                             </tr>
                             @foreach($devices as $device)
                                 <tr>
                                     <td>{{$device->id}}.</td>
                                     <td>{{$device->name}}</td>
-                                    <td>{{$device->description}}</td>
-                                    {{--<td>--}}
+                                    <td>
                                         {{--<a type="button" class="btn"--}}
                                            {{--href="/admin/roles/{{$role->id}}/permission">权限管理</a>--}}
-                                    {{--</td>--}}
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

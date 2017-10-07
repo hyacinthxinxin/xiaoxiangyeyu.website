@@ -16,18 +16,16 @@
                             <tr>
                                 <th style="width: 10px">#</th>
                                 <th>房间名称</th>
-                                <th>房间描述</th>
                                 <th>操作</th>
                             </tr>
                             @foreach($rooms as $room)
                                 <tr>
                                     <td>{{$room->id}}.</td>
                                     <td>{{$room->name}}</td>
-                                    <td>{{$room->description}}</td>
-                                    {{--<td>--}}
+                                    <td>
                                         {{--<a type="button" class="btn"--}}
                                            {{--href="/admin/roles/{{$role->id}}/permission">权限管理</a>--}}
-                                    {{--</td>--}}
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

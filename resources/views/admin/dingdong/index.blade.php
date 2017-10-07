@@ -16,6 +16,7 @@
                             <tbody>
                             <tr>
                                 <th style="width: 10px">#</th>
+                                <th>用户id</th>
                                 <th>项目名称</th>
                                 <th>音箱序号</th>
                                 <th>项目地址</th>
@@ -24,11 +25,12 @@
                             @foreach($dingdongs as $dingdong)
                                 <tr>
                                     <td>{{$dingdong->id}}.</td>
+                                    <td>{{$dingdong->admin_user_id}}</td>
                                     <td>{{$dingdong->name}}</td>
                                     <td>{{$dingdong->dingdong_user_id}}</td>
                                     <td>{{$dingdong->address}}</td>
                                     <td>
-                                    <a type="button" class="btn" href="/admin/dingdongs/{{$dingdong->id}}">查看</a>
+                                    {{--<a type="button" class="btn" href="/admin/dingdongs/{{$dingdong->id}}">查看</a>--}}
                                     </td>
                                 </tr>
                             @endforeach

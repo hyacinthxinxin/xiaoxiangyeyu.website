@@ -90,7 +90,7 @@ return [
     |
     */
     'attributes' => [
-        'name' => '用户名',
+        'name' => '名称',
         'username' => '用户名',
         'account' => '账号',
         'captcha' => '验证码',
@@ -98,6 +98,7 @@ return [
         'password' => '密码',
         'content' => '内容',
         'identity' => '手机号/用户名',
+        'type' => '类型',
     ],
 
 ];
