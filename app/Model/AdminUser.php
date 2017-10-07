@@ -41,7 +41,4 @@ class AdminUser extends Authenticatable
         return $this->hasOne(Dingdong::class, 'admin_user_id', 'id');
     }
 
-    public function hasDingdong() {
-        return !!$this->dingdong->count();
-    }
 }

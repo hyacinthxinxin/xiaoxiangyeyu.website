@@ -43,7 +43,7 @@
                         <span class="pull-right-container"></span>
                     </a>
                     <ul class="treeview-menu">
-                        @if(\Illuminate\Support\Facades\Auth::user()->hasDingdong())
+                        @if(\Illuminate\Support\Facades\Auth::user()->dingdong != null)
                             <li><a href="/admin/dingdongs/{{\Illuminate\Support\Facades\Auth::user()->dingdong->id}}"><i class="fa fa-circle-o"></i> 项目配置</a></li>
                             <li><a href="/admin/dingdongs/{{\Illuminate\Support\Facades\Auth::user()->dingdong->id}}/controls"><i class="fa fa-circle-o"></i> 设备管理</a></li>
                             <li><a href="/admin/dingdongs/{{\Illuminate\Support\Facades\Auth::user()->dingdong->id}}/controls/create"><i class="fa fa-circle-o"></i> 添加设备</a></li>
