@@ -34,4 +34,25 @@ class DeviceController extends Controller
         return redirect('/admin/devices');
     }
 
+    public function edit(AdminDevice $device) {
+        return view('admin.device.edit', compact('device'));
+    }
+
+    public function update(AdminDevice $device) {
+        $this->validate(request(), [
+            'name' => 'required',
+        ]);
+        $device->name = request('name');
+        if ($device->save()) {
+            return redirect("/admin/devices");
+        } else {
+            return redirect()->back()->withInput()->withErrors('更新失败！');
+        }
+    }
+
+    public function delete(AdminDevice $device) {
+        $device->delete();
+        return redirect()->back()->withInput()->withErrors('删除成功！');
+    }
+
 }

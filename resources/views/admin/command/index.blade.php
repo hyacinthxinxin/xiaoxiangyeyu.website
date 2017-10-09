@@ -1,7 +1,6 @@
 @extends('admin.layout.main')
 @section('content')
     <section class="content">
-        <!-- Small boxes (Stat box) -->
         <div class="row">
             <div class="col-lg-10 col-xs-12">
                 <div class="box">
@@ -10,7 +9,7 @@
                         <h3 class="box-title">指令列表</h3>
                     </div>
                     <a type="button" class="btn " href="/admin/commands/create">增加指令</a>
-                    <!-- /.box-header -->
+                    @include('admin.layout.error')
                     <div class="box-body">
                         <table class="table table-bordered">
                             <tbody>
@@ -26,8 +25,17 @@
                                     <td>{{$command->name}}</td>
                                     <td>{{commandTypeDescription($command->type) }}</td>
                                     <td>
-                                    {{--<a type="button" class="btn"--}}
-                                    {{--href="/admin/roles/{{$role->id}}/permission">权限管理</a>--}}
+                                        <a type="button" class="btn btn-info"
+                                           href="/admin/commands/{{$command->id}}/edit">
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true">编辑</span>
+                                        </a>
+                                        <form action="{{ url('admin/commands/'.$command->id) }}" method="POST" style="display: inline;">
+                                            {{ method_field('DELETE') }}
+                                            {{ csrf_field() }}
+                                            <button type="submit" class="btn btn-danger">
+                                                <span class="glyphicon glyphicon-trash" aria-hidden="true">删除</span>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

@@ -26,9 +26,9 @@
                                     </select>
                                 </div>
                             </div>
-                            @include('layout.error')
+                            @include('admin.layout.error')
                             <div class="box-footer">
-                                <button type="submit" class="btn btn-primary">提交</button>
+                                <button type="submit" class="btn btn-success">保存</button>
                             </div>
                         </form>
                     </div>

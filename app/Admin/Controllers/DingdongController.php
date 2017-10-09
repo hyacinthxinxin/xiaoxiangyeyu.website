@@ -59,7 +59,6 @@ class DingdongController extends Controller
         $dingdong->address = request('address');
         $dingdong->save();
         return redirect("/admin/dingdongs/{$dingdong->id}");
-
     }
 
 }

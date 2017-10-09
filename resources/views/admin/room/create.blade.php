@@ -2,7 +2,7 @@
 @section('content')
     <section class="content">
         <div class="row">
-            <div class="col-lg-10 col-xs-6">
+            <div class="col-lg-10 col-xs-12">
                 <div class="box">
                     <div class="box box-primary">
                         <div class="box-header with-border">
@@ -16,7 +16,7 @@
                                     <input type="text" class="form-control" name="name">
                                 </div>
                             </div>
-                            @include('layout.error')
+                            @include('admin.layout.error')
                             <div class="box-footer">
                                 <button type="submit" class="btn btn-primary">提交</button>
                             </div>

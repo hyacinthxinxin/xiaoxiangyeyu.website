@@ -33,19 +33,27 @@ Route::prefix('admin')->group(function () {
             Route::get('/rooms', '\App\Admin\Controllers\RoomController@index');
             Route::get('/rooms/create', '\App\Admin\Controllers\RoomController@create');
             Route::post('/rooms', '\App\Admin\Controllers\RoomController@store');
+            Route::get('/rooms/{room}/edit', '\App\Admin\Controllers\RoomController@edit');
+            Route::put('/rooms/{room}', '\App\Admin\Controllers\RoomController@update');
+            Route::delete('/rooms/{room}', '\App\Admin\Controllers\RoomController@delete');
 
             Route::get('/devices', '\App\Admin\Controllers\DeviceController@index');
             Route::get('/devices/create', '\App\Admin\Controllers\DeviceController@create');
             Route::post('/devices', '\App\Admin\Controllers\DeviceController@store');
+            Route::get('/devices/{device}/edit', '\App\Admin\Controllers\DeviceController@edit');
+            Route::put('/devices/{device}', '\App\Admin\Controllers\DeviceController@update');
+            Route::delete('/devices/{device}', '\App\Admin\Controllers\DeviceController@delete');
 
             Route::get('/commands', '\App\Admin\Controllers\CommandController@index');
             Route::get('/commands/create', '\App\Admin\Controllers\CommandController@create');
             Route::post('/commands', '\App\Admin\Controllers\CommandController@store');
+            Route::get('/commands/{command}/edit', '\App\Admin\Controllers\CommandController@edit');
+            Route::put('/commands/{command}', '\App\Admin\Controllers\CommandController@update');
+            Route::delete('/commands/{command}', '\App\Admin\Controllers\CommandController@delete');
         });
 
         Route::middleware(['can:project'])->group(function () {
             Route::get('/dingdongs/{dingdong}', '\App\Admin\Controllers\DingdongController@show');
-            Route::get('/dingdongs/{dingdong}/edit', '\App\Admin\Controllers\DingdongController@edit');
             Route::put('/dingdongs/{dingdong}', '\App\Admin\Controllers\DingdongController@update');
 
             Route::get('/dingdongs/{dingdong}/controls', '\App\Admin\Controllers\DingdongControlController@index');

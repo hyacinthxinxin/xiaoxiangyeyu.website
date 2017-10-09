@@ -5,7 +5,7 @@
             <div class="col-lg-10 col-xs-6">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">设备列表</h3>
+                        <h3 class="box-title">控制列表</h3>
                     </div>
                     <div class="box-body">
                         <table class="table table-bordered">
@@ -30,7 +30,7 @@
                                     <td>{{$control->command_address}}</td>
                                     <td>{{$control->command_value}}</td>
                                     <td>
-                                        <a type="button" class="btn btn-primary"
+                                        <a type="button" class="btn btn-info"
                                            href="/admin/dingdongs/{{$dingdong->id}}/controls/{{$control->id}}/edit">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true">编辑</span>
                                         </a>

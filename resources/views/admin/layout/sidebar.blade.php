@@ -1,10 +1,13 @@
+<!-- Left side column. contains the logo and sidebar -->
 <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
+        <!-- Sidebar user panel -->
         <ul class="sidebar-menu" data-widget="tree">
             @can('system')
                 <li class="active treeview">
                     <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>系统管理</span>
+                        <i class="fa fa-files-o"></i> <span>系统管理</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
@@ -48,10 +51,10 @@
                                             class="fa fa-circle-o"></i> 项目配置</a></li>
                             <li>
                                 <a href="/admin/dingdongs/{{\Illuminate\Support\Facades\Auth::user()->dingdong->id}}/controls"><i
-                                            class="fa fa-circle-o"></i> 设备管理</a></li>
+                                            class="fa fa-circle-o"></i> 控制管理</a></li>
                             <li>
                                 <a href="/admin/dingdongs/{{\Illuminate\Support\Facades\Auth::user()->dingdong->id}}/controls/create"><i
-                                            class="fa fa-circle-o"></i> 添加设备</a></li>
+                                            class="fa fa-circle-o"></i> 添加控制</a></li>
                         @endif
                     </ul>
                 </li>

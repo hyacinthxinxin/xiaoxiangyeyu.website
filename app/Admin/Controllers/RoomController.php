@@ -34,4 +34,26 @@ class RoomController extends Controller
         return redirect('/admin/rooms');
     }
 
+    public function edit(AdminRoom $room) {
+        return view('admin.room.edit', compact('room'));
+    }
+
+    public function update(AdminRoom $room) {
+        $this->validate(request(), [
+            'name' => 'required',
+        ]);
+        $room->name = request('name');
+        if ($room->save()) {
+            return redirect("/admin/rooms");
+        } else {
+            return redirect()->back()->withInput()->withErrors('更新失败！');
+        }
+    }
+
+    public function delete(AdminRoom $room) {
+        $room->delete();
+        return redirect()->back()->withInput()->withErrors('删除成功！');
+    }
+
+
 }

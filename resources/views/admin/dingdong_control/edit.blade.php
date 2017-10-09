@@ -6,7 +6,7 @@
                 <div class="box">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">编辑设备</h3>
+                            <h3 class="box-title">编辑控制</h3>
                         </div>
                         <form role="form" action="/admin/dingdongs/{{$dingdong->id}}/controls/{{$control->id}}" method="POST">
                             {{ method_field('PUT') }}
@@ -16,7 +16,7 @@
                                     <label>房间</label>
                                     <select name="room_id" class="form-control">
                                         @foreach($rooms as $room)
-                                            <option value="{{ $room->id }}">{{ $room->name }}</option>
+                                            <option value="{{ $room->id }}" @if($room->name==$control->room_name) selected @endif>{{ $room->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -26,7 +26,7 @@
                                     <label>设备</label>
                                     <select name="device_id" class="form-control">
                                         @foreach($devices as $device)
-                                            <option value="{{ $device->id }}">{{ $device->name }}</option>
+                                            <option value="{{ $device->id }}" @if($device->name==$control->device_name) selected @endif>{{ $device->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -36,7 +36,7 @@
                                     <label>指令</label>
                                     <select name="command_id" class="form-control">
                                         @foreach($commands as $command)
-                                            <option value="{{ $command->id }}">{{ $command->name }}</option>
+                                            <option value="{{ $command->id }}" @if($command->name==$control->command_name) selected @endif>{{ $command->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -55,7 +55,7 @@
                             </div>
                             @include('layout.error')
                             <div class="box-footer">
-                                <button type="submit" class="btn btn-primary">提交</button>
+                                <button type="submit" class="btn btn-primary">保存</button>
                             </div>
                         </form>
                     </div>

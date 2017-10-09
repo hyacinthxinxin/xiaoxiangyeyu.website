@@ -8,6 +8,7 @@
                         <h3 class="box-title">房间列表</h3>
                     </div>
                     <a type="button" class="btn " href="/admin/rooms/create">增加房间</a>
+                    @include('admin.layout.error')
                     <div class="box-body">
                         <table class="table table-bordered">
                             <tbody>
@@ -21,8 +22,17 @@
                                     <td>{{$room->id}}.</td>
                                     <td>{{$room->name}}</td>
                                     <td>
-                                        {{--<a type="button" class="btn"--}}
-                                           {{--href="/admin/roles/{{$role->id}}/permission">权限管理</a>--}}
+                                        <a type="button" class="btn btn-info"
+                                           href="/admin/rooms/{{$room->id}}/edit">
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true">编辑</span>
+                                        </a>
+                                        <form action="{{ url('admin/rooms/'.$room->id) }}" method="POST" style="display: inline;">
+                                            {{ method_field('DELETE') }}
+                                            {{ csrf_field() }}
+                                            <button type="submit" class="btn btn-danger">
+                                                <span class="glyphicon glyphicon-trash" aria-hidden="true">删除</span>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
