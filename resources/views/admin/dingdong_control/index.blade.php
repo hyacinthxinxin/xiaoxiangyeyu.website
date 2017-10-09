@@ -30,7 +30,12 @@
                                     <td>{{$control->command_address}}</td>
                                     <td>{{$control->command_value}}</td>
                                     <td>
-                                        {{--<a type="button" class="btn" href="/admin/dingdongs/{{$dingdong->id}}">查看</a>--}}
+                                        <a type="button" class="btn btn-primary" href="/admin/dingdongs/{{$dingdong->id}}/controls/{{$control->id}}/edit">
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true">编辑</span>
+                                        </a>
+                                        <a type="button" class="btn btn-danger" href="/admin/dingdongs/{{$dingdong->id}}/controls/{{$control->id}}/delete">
+                                            <span class="glyphicon glyphicon-trash" aria-hidden="true">删除</span>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach

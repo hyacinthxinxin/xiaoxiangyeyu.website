@@ -29,7 +29,7 @@ class DingdongController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'admin_user_id' => 'required',
+            'admin_user_id' => 'required|unique:dingdongs,admin_user_id',
             'name' => 'required',
             'dingdong_user_id' => 'required',
             'address' => 'required',
@@ -41,45 +41,25 @@ class DingdongController extends Controller
 
     public function show(Dingdong $dingdong)
     {
-
         return view('admin.dingdong.show', compact('dingdong'));
     }
 
-    public function controls(Dingdong $dingdong)
-    {
-        $controls = DingdongControl::paginate(10);
-        return view('admin.dingdong.controls', compact('dingdong', 'controls'));
+    public function edit(Dingdong $dingdong) {
+        return view('admin.dingdong.edit', compact('dingdong'));
     }
 
-    public function control_create(Dingdong $dingdong)
-    {
-        $rooms = AdminRoom::all();
-        $devices = AdminDevice::all();
-        $commands = AdminCommand::all();
-        return view('admin.dingdong.control_create', compact('dingdong', 'rooms', 'devices', 'commands'));
-    }
-
-    public function control_store(Dingdong $dingdong)
-    {
+    public function update(Dingdong $dingdong) {
         $this->validate(request(), [
-            'command_address' => 'required',
-            'command_value' => 'required',
+            'name' => 'required',
+            'dingdong_user_id' => 'required',
+            'address' => 'required',
         ]);
-        $params = [];
-        $dingdong_id = $dingdong->id;
-        $params['dingdong_id'] = $dingdong_id;
-        $room_id = intval(request('room_id'));
-        $params['room_name'] = AdminRoom::find($room_id)->name;
-        $device_id = intval(request('device_id'));
-        $params['device_name'] = AdminDevice::find($device_id)->name;
-        $command_id = intval(request('command_id'));
-        $params['command_name'] = AdminCommand::find($command_id)->name;
-        $params['command_type'] = AdminCommand::find($command_id)->type;
-        $params['command_address'] = request('command_address');
-        $params['command_value'] = intval(request('command_value'));
-        DingdongControl::create($params);
-        return redirect('/admin/dingdongs/' . $dingdong_id . '/controls');
-    }
+        $dingdong->name = request('name');
+        $dingdong->dingdong_user_id = request('dingdong_user_id');
+        $dingdong->address = request('address');
+        $dingdong->save();
+        return redirect("/admin/dingdongs/{$dingdong->id}");
 
+    }
 
 }

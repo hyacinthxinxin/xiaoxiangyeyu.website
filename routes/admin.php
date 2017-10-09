@@ -29,29 +29,31 @@ Route::prefix('admin')->group(function () {
             Route::post('/dingdongs', '\App\Admin\Controllers\DingdongController@store');
         });
 
-        Route::middleware(['can:room'])->group(function () {
+        Route::middleware(['can:dingdong'])->group(function () {
             Route::get('/rooms', '\App\Admin\Controllers\RoomController@index');
             Route::get('/rooms/create', '\App\Admin\Controllers\RoomController@create');
             Route::post('/rooms', '\App\Admin\Controllers\RoomController@store');
-        });
 
-        Route::middleware(['can:device'])->group(function () {
             Route::get('/devices', '\App\Admin\Controllers\DeviceController@index');
             Route::get('/devices/create', '\App\Admin\Controllers\DeviceController@create');
             Route::post('/devices', '\App\Admin\Controllers\DeviceController@store');
-        });
 
-        Route::middleware(['can:command'])->group(function () {
             Route::get('/commands', '\App\Admin\Controllers\CommandController@index');
             Route::get('/commands/create', '\App\Admin\Controllers\CommandController@create');
             Route::post('/commands', '\App\Admin\Controllers\CommandController@store');
         });
 
-        Route::middleware(['can:dingdong'])->group(function () {
+        Route::middleware(['can:project'])->group(function () {
             Route::get('/dingdongs/{dingdong}', '\App\Admin\Controllers\DingdongController@show');
-            Route::get('/dingdongs/{dingdong}/controls', '\App\Admin\Controllers\DingdongController@controls');
-            Route::get('/dingdongs/{dingdong}/controls/create', '\App\Admin\Controllers\DingdongController@control_create');
-            Route::post('/dingdongs/{dingdong}/controls', '\App\Admin\Controllers\DingdongController@control_store');
+            Route::get('/dingdongs/{dingdong}/edit', '\App\Admin\Controllers\DingdongController@edit');
+            Route::put('/dingdongs/{dingdong}', '\App\Admin\Controllers\DingdongController@update');
+
+            Route::get('/dingdongs/{dingdong}/controls', '\App\Admin\Controllers\DingdongControlController@index');
+            Route::get('/dingdongs/{dingdong}/controls/create', '\App\Admin\Controllers\DingdongControlController@create');
+            Route::post('/dingdongs/{dingdong}/controls', '\App\Admin\Controllers\DingdongControlController@store');
+            Route::get('/dingdongs/{dingdong}/controls/{control}/edit', '\App\Admin\Controllers\DingdongControlController@edit');
+            Route::put('/dingdongs/{dingdong}/controls/{control}', '\App\Admin\Controllers\DingdongControlController@update');
+            Route::get('/dingdongs/{dingdong}/controls/{control}/delete', '\App\Admin\Controllers\DingdongControlController@delete');
         });
 
     });

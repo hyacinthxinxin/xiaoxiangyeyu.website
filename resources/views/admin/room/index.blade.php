@@ -1,7 +1,6 @@
 @extends('admin.layout.main')
 @section('content')
     <section class="content">
-        <!-- Small boxes (Stat box) -->
         <div class="row">
             <div class="col-lg-10 col-xs-6">
                 <div class="box">
@@ -9,7 +8,6 @@
                         <h3 class="box-title">房间列表</h3>
                     </div>
                     <a type="button" class="btn " href="/admin/rooms/create">增加房间</a>
-                    <!-- /.box-header -->
                     <div class="box-body">
                         <table class="table table-bordered">
                             <tbody>

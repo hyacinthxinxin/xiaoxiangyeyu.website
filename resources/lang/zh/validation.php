@@ -99,6 +99,10 @@ return [
         'content' => '内容',
         'identity' => '手机号/用户名',
         'type' => '类型',
+        'room' => '房间',
+        'device' => '设备',
+        'command_address' => '指令地址',
+        'command_value' => '指令值',
     ],
 
 ];

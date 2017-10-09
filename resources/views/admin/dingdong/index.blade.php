@@ -3,7 +3,7 @@
     <section class="content">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            <div class="col-lg-10 col-xs-6">
+            <div class="col-lg-10 col-xs-12">
                 <div class="box">
 
                     <div class="box-header with-border">
@@ -16,7 +16,7 @@
                             <tbody>
                             <tr>
                                 <th style="width: 10px">#</th>
-                                <th>用户id</th>
+                                <th>所属用户</th>
                                 <th>项目名称</th>
                                 <th>音箱序号</th>
                                 <th>项目地址</th>
@@ -25,7 +25,7 @@
                             @foreach($dingdongs as $dingdong)
                                 <tr>
                                     <td>{{$dingdong->id}}.</td>
-                                    <td>{{$dingdong->admin_user_id}}</td>
+                                    <td>{{$dingdong->user->name}}</td>
                                     <td>{{$dingdong->name}}</td>
                                     <td>{{$dingdong->dingdong_user_id}}</td>
                                     <td>{{$dingdong->address}}</td>

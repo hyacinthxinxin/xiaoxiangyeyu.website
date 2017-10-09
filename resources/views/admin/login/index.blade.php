@@ -13,33 +13,30 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="/adminlte/index2.html">管理后台</a>
-        </div>
-        <!-- /.login-logo -->
-        <div class="login-box-body">
-            <p class="login-box-msg">登陆</p>
-            <form action="/admin/login" method="post">
-                {{ csrf_field() }}
-                <div class="form-group has-feedback">
-                    <input name="name" type="text" class="form-control" placeholder="名字">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="#">管理后台</a>
+    </div>
+    <div class="login-box-body">
+        <p class="login-box-msg">登陆</p>
+        <form action="/admin/login" method="post">
+            {{ csrf_field() }}
+            <div class="form-group has-feedback">
+                <input name="name" type="text" class="form-control" placeholder="名字">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input name="password" type="password" class="form-control" placeholder="密码">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            @include('admin.layout.error')
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">登陆</button>
                 </div>
-                <div class="form-group has-feedback">
-                    <input name="password" type="password" class="form-control" placeholder="密码">
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                </div>
-                <div class="row">
-                    @include('admin.layout.error')
-                    <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">登陆</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 </div>
 <script src="{{ asset ("/assets/js/admin.js") }}" type="text/javascript"></script>
