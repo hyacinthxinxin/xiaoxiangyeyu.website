@@ -24,7 +24,7 @@
                                 <tr>
                                     <td>{{$command->id}}.</td>
                                     <td>{{$command->name}}</td>
-                                    <td>{{$command->type}}</td>
+                                    <td>{{commandTypeDescription($command->type) }}</td>
                                     <td>
                                     {{--<a type="button" class="btn"--}}
                                     {{--href="/admin/roles/{{$role->id}}/permission">权限管理</a>--}}

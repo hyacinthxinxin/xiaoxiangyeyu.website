@@ -18,8 +18,12 @@
                             </div>
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">类型</label>
-                                    <input type="number" class="form-control" name="type">
+                                    <label for="exampleInputEmail1">指令类型</label>
+                                    <select name="type" id="" class="form-control">
+                                        @foreach(Config::get('constants.command_types') as $command_type)
+                                            <option value="{{ $command_type['value'] }}">{{ $command_type['name']}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             @include('layout.error')
