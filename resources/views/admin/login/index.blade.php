@@ -7,11 +7,13 @@
     <title>潇湘夜雨 | 后台登录</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="{{asset('/assets/css/admin.css')}}">
+    <link rel="stylesheet" href="{{ asset('/assets/admin/css/login.css') }}">
+
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -39,7 +41,9 @@
         </form>
     </div>
 </div>
-<script src="{{ asset ("/assets/js/admin.js") }}" type="text/javascript"></script>
+<script src="{{ asset ("/assets/admin/js/jquery.min.js") }}" type="text/javascript"></script>
+<script src="{{ asset ("/assets/admin/js/bootstrap.min.js") }}" type="text/javascript"></script>
+<script src="{{ asset ("/assets/admin/js/icheck.min.js") }}" type="text/javascript"></script>
 <script>
     $(function () {
         $('input').iCheck({

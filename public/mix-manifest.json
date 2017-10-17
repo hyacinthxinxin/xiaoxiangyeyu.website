@@ -9,6 +9,8 @@
     "/assets/admin/css/bootstrap-datepicker.min.css": "/assets/admin/css/bootstrap-datepicker.min.css",
     "/assets/admin/css/daterangepicker.css": "/assets/admin/css/daterangepicker.css",
     "/assets/admin/css/bootstrap3-wysihtml5.min.css": "/assets/admin/css/bootstrap3-wysihtml5.min.css",
+    "/assets/admin/css/blue.css": "/assets/admin/css/blue.css",
+    "/assets/admin/css/login.css": "/assets/admin/css/login.css",
     "/assets/admin/js/jquery.min.js": "/assets/admin/js/jquery.min.js",
     "/assets/admin/js/jquery-ui.min.js": "/assets/admin/js/jquery-ui.min.js",
     "/assets/admin/js/bootstrap.min.js": "/assets/admin/js/bootstrap.min.js",
@@ -22,7 +24,15 @@
     "/assets/admin/js/daterangepicker.js": "/assets/admin/js/daterangepicker.js",
     "/assets/admin/js/bootstrap-datepicker.min.js": "/assets/admin/js/bootstrap-datepicker.min.js",
     "/assets/admin/js/bootstrap3-wysihtml5.all.min.js": "/assets/admin/js/bootstrap3-wysihtml5.all.min.js",
-    "/assets/admin/js/slimscroll.js": "/assets/admin/js/slimscroll.js",
+    "/assets/admin/js/jquery.slimscroll.min.js": "/assets/admin/js/jquery.slimscroll.min.js",
     "/assets/admin/js/fastclick.js": "/assets/admin/js/fastclick.js",
-    "/assets/admin/js/adminlte.min.js": "/assets/admin/js/adminlte.min.js"
+    "/assets/admin/js/adminlte.min.js": "/assets/admin/js/adminlte.min.js",
+    "/assets/admin/js/icheck.min.js": "/assets/admin/js/icheck.min.js",
+    "/assets/admin/fonts/fontawesome-webfont.ttf": "/assets/admin/fonts/fontawesome-webfont.ttf",
+    "/assets/admin/fonts/fontawesome-webfont.woff": "/assets/admin/fonts/fontawesome-webfont.woff",
+    "/assets/admin/fonts/fontawesome-webfont.woff2": "/assets/admin/fonts/fontawesome-webfont.woff2",
+    "/assets/admin/fonts/glyphicons-halflings-regular.ttf": "/assets/admin/fonts/glyphicons-halflings-regular.ttf",
+    "/assets/admin/fonts/glyphicons-halflings-regular.woff": "/assets/admin/fonts/glyphicons-halflings-regular.woff",
+    "/assets/admin/fonts/glyphicons-halflings-regular.woff2": "/assets/admin/fonts/glyphicons-halflings-regular.woff2",
+    "/assets/admin/images/avatar.png": "/assets/admin/images/avatar.png"
 }

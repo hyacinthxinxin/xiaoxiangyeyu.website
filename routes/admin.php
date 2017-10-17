@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // 管理后台
 Route::prefix('admin')->group(function () {
-
+    Route::get('/', '\App\Admin\Controllers\IndexController@index')->name('admin.index');
     Route::get('/login', '\App\Admin\Controllers\LoginController@index')->name('admin.login');
     Route::post('/login', '\App\Admin\Controllers\LoginController@login');
     Route::middleware(['auth:admin'])->group(function () {

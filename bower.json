@@ -1,0 +1,18 @@
+{
+  "name": "xiaoxiangyeyu.website",
+  "homepage": "https://github.com/hyacinthxinxin/xiaoxiangyeyu.website",
+  "authors": [
+    "hyacinthxinxin <fanxin0202@163.com>"
+  ],
+  "description": "website for xiaoxiangyeyu",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower",
+    "test",
+    "tests"
+  ]
+}
