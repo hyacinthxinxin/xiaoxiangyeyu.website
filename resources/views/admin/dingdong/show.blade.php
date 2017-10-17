@@ -55,9 +55,9 @@
 @endsection
 @section('script')
     <!-- InputMask -->
-    <script src="{{ asset('/assets/admin/js/jquery.inputmask.js') }}"></script>
-    <script src="{{ asset('/assets/admin/js/jquery.inputmask.date.extensions.js') }}"></script>
-    <script src="{{ asset('/assets/admin/js/jquery.inputmask.extensions.js') }}"></script>
+    <script src="{{ asset('/js/jquery.inputmask.js') }}"></script>
+    <script src="{{ asset('/js/jquery.inputmask.date.extensions.js') }}"></script>
+    <script src="{{ asset('/js/jquery.inputmask.extensions.js') }}"></script>
     <script>
         $(function () {
             $('[data-mask]').inputmask();

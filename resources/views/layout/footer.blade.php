@@ -1,7 +1,9 @@
-<footer class="blog-footer">
-    <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a
-                href="https://twitter.com/mdo">@mdo</a>.</p>
-    <p>
-        <a href="#">Back to top</a>
-    </p>
+<footer class="main-footer">
+    <div class="container">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 2.4.0
+        </div>
+        <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+        reserved.
+    </div>
 </footer>
