@@ -1,12 +1,9 @@
 @extends('admin.layout.main')
 @section('content')
     <section class="content">
-        <!-- Small boxes (Stat box) -->
         <div class="row">
             <div class="col-lg-10 col-xs-12">
                 <div class="box">
-
-                    <!-- /.box-header -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
                             <h3 class="box-title">编辑项目</h3>
@@ -58,9 +55,9 @@
 @endsection
 @section('script')
     <!-- InputMask -->
-    <script src="/bower_components/admin-lte/plugins/input-mask/jquery.inputmask.js"></script>
-    <script src="/bower_components/admin-lte/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-    <script src="/bower_components/admin-lte/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+    <script src="{{ asset('/assets/admin/js/jquery.inputmask.js') }}"></script>
+    <script src="{{ asset('/assets/admin/js/jquery.inputmask.date.extensions.js') }}"></script>
+    <script src="{{ asset('/assets/admin/js/jquery.inputmask.extensions.js') }}"></script>
     <script>
         $(function () {
             $('[data-mask]').inputmask();

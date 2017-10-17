@@ -68,6 +68,10 @@ mix.copy('vendor/bower/fastclick/lib/fastclick.js', 'public/assets/admin/js/');
 mix.copy('vendor/bower/admin-lte/dist/js/adminlte.min.js', 'public/assets/admin/js/');
 <!-- iCheck -->
 mix.copy('vendor/bower/admin-lte/plugins/iCheck/icheck.min.js', 'public/assets/admin/js/');
+<!-- InputMask -->
+mix.copy('vendor/bower/admin-lte/plugins/input-mask/jquery.inputmask.js', 'public/assets/admin/js/');
+mix.copy('vendor/bower/admin-lte/plugins/input-mask/jquery.inputmask.date.extensions.js', 'public/assets/admin/js/');
+mix.copy('vendor/bower/admin-lte/plugins/input-mask/jquery.inputmask.extensions.js', 'public/assets/admin/js/');
 // 合并javascript脚本
 // mix.scripts(
 //     [
