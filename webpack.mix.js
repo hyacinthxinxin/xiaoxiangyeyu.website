@@ -3,6 +3,7 @@ let mix = require('laravel-mix');
 // css
 <!-- Bootstrap 3.3.7 -->
 mix.copy('vendor/bower/bootstrap/dist/css/bootstrap.min.css', 'public/assets/admin/css/');
+mix.copy('vendor/bower/bootstrap/dist/css/bootstrap.min.css.map', 'public/assets/admin/css/');
 <!-- Font Awesome -->
 mix.copy('vendor/bower/font-awesome/css/font-awesome.min.css', 'public/assets/admin/css/');
 <!-- Ionicons -->
